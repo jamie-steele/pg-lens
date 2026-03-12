@@ -1,0 +1,16 @@
+services:
+  dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        PG_MAJOR: ${PG_MAJOR:-15}
+        LOCAL_UID: ${UID:-1000}
+        LOCAL_GID: ${GID:-1000}
+    environment:
+      PG_CONFIG: /usr/lib/postgresql/${PG_MAJOR:-15}/bin/pg_config
+    working_dir: /workspace
+    volumes:
+      - .:/workspace
+    stdin_open: true
+    tty: true

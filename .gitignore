@@ -53,3 +53,9 @@ dkms.conf
 
 # debug information files
 *.dwo
+
+# PostgreSQL extension build artifacts
+results/
+regression.diffs
+regression.out
+tmp_check/
